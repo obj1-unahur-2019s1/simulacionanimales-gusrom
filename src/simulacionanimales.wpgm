@@ -21,6 +21,7 @@ program animales {
 	 keyboard.a().onPressDo({if(animalActual.tieneSed()){game.say(animalActual,"Tengo sed")}
 	 	else{game.say(animalActual,"No tengo sed")}
 	 })
+	 keyboard.up().onPressDo({animalActual.position(animalActual.position().up(1))})
 	
 	/*
 	 * arrancamos el juego
