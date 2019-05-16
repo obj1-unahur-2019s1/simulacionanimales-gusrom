@@ -26,7 +26,7 @@ class Gallina{
 	var property tieneSed=false
 	
 	
-	method comer(kgs){vecesQueComio++}
+	method comer(kilos){vecesQueComio++}
 	method beber(){if(vecesQueComio==2 or vecesQueComio==5){tieneSed=true}
 		else{tieneSed=false}
 	}
