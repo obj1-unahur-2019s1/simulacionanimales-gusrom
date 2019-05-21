@@ -9,8 +9,11 @@ program animales {
 	/*
 	 * agregamos personajes
 	 */ 
-	var animalActual = new Vaca()
+	var vaca=new Vaca()
+	var gallina=new Gallina()
+	var animalActual = gallina
 	game.addVisual(animalActual)
+	
 
 	/*
 	 * configuraciones de teclado
@@ -21,8 +24,29 @@ program animales {
 	 keyboard.a().onPressDo({if(animalActual.tieneSed()){game.say(animalActual,"Tengo sed")}
 	 	else{game.say(animalActual,"No tengo sed")}
 	 })
-	 keyboard.up().onPressDo({animalActual.position(animalActual.position().up(1))})
-	
+	 keyboard.up().onPressDo({animalActual.movimiento()
+	 	animalActual.subir()
+	 })
+	 keyboard.right().onPressDo({animalActual.movimiento()
+	 	animalActual.aLaDerecha()
+	 })
+	 keyboard.left().onPressDo({animalActual.movimiento()
+	 	animalActual.aLaIzquierda()
+	 })
+	 keyboard.down().onPressDo({animalActual.movimiento()
+	 	animalActual.bajar()
+	 })
+	 keyboard.num1().onPressDo({game.removeVisual(animalActual)
+	 	animalActual=gallina
+	 	game.addVisual(animalActual)
+	 })
+	  keyboard.num2().onPressDo({game.removeVisual(animalActual)
+	 	animalActual=vaca
+	 	game.addVisual(animalActual)
+	 })
+	 keyboard.h().onPressDo({if(animalActual.tieneHambre()){game.say(animalActual,"Tengo hambre")}
+	 	else{game.say(animalActual,"No tengo hambre")}
+	 })
 	/*
 	 * arrancamos el juego
 	 */
